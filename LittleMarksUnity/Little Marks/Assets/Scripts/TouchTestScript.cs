@@ -8,6 +8,7 @@ public class TouchTestScript : MonoBehaviour {
 	private Vector2 pos;
 	private Vector2 lastPos;
 	private float moveSide;
+	public float shipVelocity = 0.5f;
 
 	// Update is called once per frame
 	/* void FixedUpdate () {
@@ -42,10 +43,19 @@ public class TouchTestScript : MonoBehaviour {
 
 				moveSide = lastPos.y - pos.y;
 
-				if (moveSide > 0)
-					transform.DOMoveY(3.0f, 1.0f);
+				if (moveSide > 0) {
+					if (transform.position.y == -3.0f) {
+						transform.DOMoveY (0.0f, shipVelocity);
+					} else if (transform.position.y == 0.0f) {
+						transform.DOMoveY (3.0f, shipVelocity);
+					}
+				}
 				else {
-					transform.DOMoveY(-3.0f, 1.0f);
+					if (transform.position.y == 3.0f) {
+						transform.DOMoveY (0.0f, shipVelocity);
+					} else if (transform.position.y == 0.0f) {
+						transform.DOMoveY (-3.0f, shipVelocity);
+					}
 				}
 
 			}
