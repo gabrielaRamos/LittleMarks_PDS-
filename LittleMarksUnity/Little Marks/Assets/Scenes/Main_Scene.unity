@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 236511698}
   - component: {fileID: 236511697}
   - component: {fileID: 236511701}
-  - component: {fileID: 236511700}
   m_Layer: 0
   m_Name: SkyBackground2
   m_TagString: Untagged
@@ -215,31 +214,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!61 &236511700
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 236511695}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.78, y: 2.834}
-    newSize: {x: 18.9, y: 14.17}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.78, y: 2.834}
-  m_EdgeRadius: 0
 --- !u!114 &236511701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +238,6 @@ GameObject:
   - component: {fileID: 332142664}
   - component: {fileID: 332142663}
   - component: {fileID: 332142666}
-  - component: {fileID: 332142665}
   m_Layer: 0
   m_Name: SkyBackground
   m_TagString: Untagged
@@ -359,31 +332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -6
---- !u!61 &332142665
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 332142660}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.78, y: 2.834}
-    newSize: {x: 18.9, y: 14.17}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.78, y: 2.834}
-  m_EdgeRadius: 0
 --- !u!114 &332142666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,7 +393,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1232837747
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 22a32bfbcb5f00f48ba48fbde3b108cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -706,10 +654,69 @@ MonoBehaviour:
   m_GameObject: {fileID: 873655934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b430b603ff2dec4cb7ebf358f57091a, type: 3}
+  m_Script: {fileID: 11500000, guid: f1a87e976fae2d24c8952ca5a4c9279c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shipVelocity: 0.5
+--- !u!1 &936621519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 936621521}
+  - component: {fileID: 936621520}
+  - component: {fileID: 936621522}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &936621520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936621519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8859104ffa0d7e4a9f34f0c72610333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 0}
+  gameOver: 0
+--- !u!4 &936621521
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936621519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.32833093, y: 0.5569419, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936621522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936621519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a24c05a92c3fad439abf8a8fce0a681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetPrefab: {fileID: 1002928503512574, guid: 915c8e31af7c1fe42aa522adb92d4d4a,
+    type: 2}
+  planetSpawnRate: 15
+  planetLocationY: 2
+  planetLocationX: 10
 --- !u!1 &1404223300
 GameObject:
   m_ObjectHideFlags: 0

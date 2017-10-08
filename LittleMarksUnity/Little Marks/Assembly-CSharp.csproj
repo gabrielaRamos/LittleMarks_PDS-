@@ -53,9 +53,11 @@
   <ItemGroup>
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\Scripts\GameControl.cs" />
+     <Compile Include="Assets\Scripts\PlanetSpawn.cs" />
      <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
      <Compile Include="Assets\Scripts\ScrollingObject.cs" />
-     <Compile Include="Assets\Scripts\TouchTestScript.cs" />
+     <Compile Include="Assets\Scripts\Ship.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />

@@ -3,27 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class TouchTestScript : MonoBehaviour {
+public class Ship : MonoBehaviour {
 
 	private Vector2 pos;
 	private Vector2 lastPos;
 	private float moveSide;
 	public float shipVelocity = 0.5f;
+	private bool isDead = false;
 
 	// Update is called once per frame
-	/* void FixedUpdate () {
-
-		Rigidbody2D lRigid = GetComponent<Rigidbody2D>();
-
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
-
-		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-		lRigid.velocity = movement;
-		
-	}
-
-	*/
 
 	void Update()
 	{
@@ -61,4 +49,10 @@ public class TouchTestScript : MonoBehaviour {
 			}
 		}
 	}
+
+	void onColissionEnter2D(){
+		isDead = true;
+		GameControl.instance.ShipExplodes ();
+	}
+
 }
