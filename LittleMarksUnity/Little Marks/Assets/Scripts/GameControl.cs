@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
 	public static GameControl instance;
 	public GameObject gameOverText;
 	public bool gameOver = false;
+	public Text scoreText;
+
+	private int score = 0;
 
 	// Use this for initialization
 	void Awake () {
@@ -18,13 +23,24 @@ public class GameControl : MonoBehaviour {
 		}
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+		
 
-		/* IF game over e teve toque na tela
-		 * SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        */
+
+		if (gameOver && Input.touchCount > 0) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		}
+
+		ShipScored();
+	}
+
+	public void ShipScored(){
+		if (gameOver)
+			return;
+		score = (int)(Time.timeSinceLevelLoad * 5);
+		scoreText.text = "Score = " + score;
 	}
 
 	public void ShipExplodes(){
