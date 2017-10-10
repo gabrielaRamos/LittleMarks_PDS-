@@ -8,49 +8,62 @@ public class Ship : MonoBehaviour {
 	private Vector2 pos;
 	private Vector2 lastPos;
 	private float moveSide;
-	public float shipVelocity = 0.5f;
 	private bool isDead = false;
+	private bool controlConstantTouch = false;
+	private Rigidbody2D rb2d;
+	private bool blockMoveTouch = true;
+
+	public float shipVelocity = 0.5f;
+	public float botLane = -3.0f;
+	public float midLane = 0f;
+	public float topLane = 3.0f;
+
+	void Start(){
+		transform.DOMoveY (midLane, shipVelocity);
+	}
 
 	// Update is called once per frame
 
 	void Update()
 	{
-		if (Input.touchCount > 0)
-		{
-			
-			Touch touch = Input.GetTouch(0);
+		if (isDead == false) {
+			if (Input.touchCount > 0)
+			{
 
-			if (TouchPhase.Began == touch.phase) {
-				pos = Vector2.zero;
-				pos = touch.position;
-			}
+				Touch touch = Input.GetTouch(0);
 
-			else if(touch.phase == TouchPhase.Moved) {
-				lastPos = Vector2.zero;
-				lastPos = touch.position;
+				if (touch.phase == TouchPhase.Began) {
+					pos = Vector2.zero;
+					pos = touch.position;
+					controlConstantTouch = false;
+					blockMoveTouch = false;
+				} else if (touch.phase == TouchPhase.Moved && !controlConstantTouch && !blockMoveTouch) {
+					lastPos = Vector2.zero;
+					lastPos = touch.position;
 
-				moveSide = lastPos.y - pos.y;
+					moveSide = lastPos.y - pos.y;
 
-				if (moveSide > 0) {
-					if (transform.position.y == -3.0f) {
-						transform.DOMoveY (0.0f, shipVelocity);
-					} else if (transform.position.y == 0.0f) {
-						transform.DOMoveY (3.0f, shipVelocity);
+					if (moveSide > 0) {
+						if (transform.position.y == botLane) {
+							transform.DOMoveY (midLane, shipVelocity);
+						} else if (transform.position.y == midLane) {
+							transform.DOMoveY (topLane, shipVelocity);
+						}
+					} else if (moveSide < 0) {
+						if (transform.position.y == topLane) {
+							transform.DOMoveY (midLane, shipVelocity);
+						} else if (transform.position.y == midLane) {
+							transform.DOMoveY (botLane, shipVelocity);
+						}
 					}
-				}
-				else {
-					if (transform.position.y == 3.0f) {
-						transform.DOMoveY (0.0f, shipVelocity);
-					} else if (transform.position.y == 0.0f) {
-						transform.DOMoveY (-3.0f, shipVelocity);
-					}
-				}
 
+					controlConstantTouch = true;
+				} 
 			}
 		}
 	}
 
-	void onColissionEnter2D(){
+	void OnCollisionEnter2D() {
 		isDead = true;
 		GameControl.instance.ShipExplodes ();
 	}
