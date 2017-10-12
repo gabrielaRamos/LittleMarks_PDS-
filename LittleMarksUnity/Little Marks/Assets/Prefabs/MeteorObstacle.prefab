@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4230040085386646}
   - component: {fileID: 212441075762849234}
   - component: {fileID: 50902945146670666}
-  - component: {fileID: 114845330949021848}
   - component: {fileID: 60812579977728238}
+  - component: {fileID: 114115853789407612}
   m_Layer: 0
   m_Name: MeteorObstacle
   m_TagString: Untagged
@@ -183,7 +183,7 @@ PolygonCollider2D:
       - {x: -4.0162497, y: -5.315624}
       - {x: -3.7012496, y: -5.217187}
       - {x: -2.5593748, y: -5.177812}
---- !u!114 &114845330949021848
+--- !u!114 &114115853789407612
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -195,6 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -8
+  increaseSpeedPerScore: 0.3
+  scoreToIncreaseSpeed: 50
+  scoreToStopIncreasingSpeed: 730
 --- !u!212 &212441075762849234
 SpriteRenderer:
   m_ObjectHideFlags: 1
