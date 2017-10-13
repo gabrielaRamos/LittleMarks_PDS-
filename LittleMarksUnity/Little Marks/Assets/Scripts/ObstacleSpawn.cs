@@ -15,7 +15,7 @@ public class ObstacleSpawn : MonoBehaviour {
 	private GameObject[] meteors;
 	private float timeSinceLastMeteor;
 	private Vector2 initialMeteor = new Vector2 (-15f, -25f);
-	private int currentColumn = 0;
+	private int currentObstacle = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -27,24 +27,49 @@ public class ObstacleSpawn : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		int spawnControl;
 		timeSinceLastMeteor += Time.deltaTime;
 
-		int spawnControl = Random.Range (0, 3);
+		if (GameControl.instance.score > 150) {
+			spawnControl = Random.Range (0, 6);
+		}
+		else{
+			spawnControl = Random.Range (0, 3);
+		}
+		 
 
 		if (GameControl.instance.gameOver == false && timeSinceLastMeteor >= meteorSpawnRate) {
 			
 			timeSinceLastMeteor = 0f;
 
 			if (spawnControl == 0)
-				meteors[currentColumn].transform.position = new Vector2 (meteorSpawnX, botLane);
+				meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, botLane);
 			else if (spawnControl == 1)
-				meteors[currentColumn].transform.position = new Vector2 (meteorSpawnX, midLane);
-			else
-				meteors[currentColumn].transform.position = new Vector2 (meteorSpawnX, topLane);			
+				meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, midLane);
+			else if (spawnControl == 2)
+				meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, topLane);
+			else if (spawnControl == 3) {
+				if ((currentObstacle + 1) < meteorPoolSize) {
+					meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, botLane);
+					meteors [currentObstacle + 1].transform.position = new Vector2 (meteorSpawnX, topLane);
+				}
+			}
+			else if (spawnControl == 4) {
+				if ((currentObstacle + 1) < meteorPoolSize) {
+					meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, midLane);
+					meteors [currentObstacle + 1].transform.position = new Vector2 (meteorSpawnX, topLane);
+				}
+			}
+			else if (spawnControl == 5) {
+				if ((currentObstacle + 1) < meteorPoolSize) {
+					meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, botLane);
+					meteors [currentObstacle + 1].transform.position = new Vector2 (meteorSpawnX, midLane);
+				}
+			}
 		
-			if (currentColumn >= meteorPoolSize) 
+			if (currentObstacle >= meteorPoolSize) 
 			{
-				currentColumn = 0;
+				currentObstacle = 0;
 			}
 		}
 	}

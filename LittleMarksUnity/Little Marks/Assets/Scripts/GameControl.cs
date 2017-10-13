@@ -8,10 +8,14 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl instance;
 	public GameObject gameOverText;
+	public GameObject priceWinText;
+	public GameObject priceReclaimText;
 	public bool gameOver = false;
 	public Text scoreText;
+	public int score = 0;
 
-	private int score = 0;
+	private float currentTime;
+	private bool priceWon = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -27,25 +31,40 @@ public class GameControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-
-
 		if (gameOver && Input.touchCount > 0) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}
 
 		ShipScored();
+
+		if (score == 100 && gameOver == false) {
+			currentTime = Time.time;
+			priceWinText.SetActive (true);
+			priceWon = true;
+		}
+		if ((Time.time - currentTime >= 3.0f) || gameOver == true) {
+			priceWinText.SetActive (false);
+		}
 	}
 
 	public void ShipScored(){
 		if (gameOver)
 			return;
 		score = (int)(Time.timeSinceLevelLoad * 5);
-		scoreText.text = "Score = " + score;
+		scoreText.text = "Pontuação = " + score;
 	}
 
 	public void ShipExplodes(){
 		
 		gameOverText.SetActive (true);
+		if (priceWon)
+			priceReclaimText.SetActive (true);
+		
 		gameOver = true;	
+
+	}
+
+	public void priceWin(){
+		priceWinText.SetActive (true);
 	}
 }

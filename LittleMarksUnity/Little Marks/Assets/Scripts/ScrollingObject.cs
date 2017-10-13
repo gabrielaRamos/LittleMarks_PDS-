@@ -5,7 +5,12 @@ using UnityEngine;
 public class ScrollingObject : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
-	public float scrollSpeed = -1.5f;
+	private bool control = false;
+
+	public float scrollSpeed = -3.5f;
+	public float increaseSpeedPerScore = -0.15f;
+	public float scoreToIncreaseSpeed = 50;
+	public float scoreToStopIncreasingSpeed = 120;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +21,29 @@ public class ScrollingObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (GameControl.instance.score % scoreToIncreaseSpeed != 0 && GameControl.instance.score < scoreToStopIncreasingSpeed) {
+			control = false;
+		}
+
+		if ((GameControl.instance.score % scoreToIncreaseSpeed) == 0 
+			&& GameControl.instance.score != 0 
+			&& GameControl.instance.gameOver == false 
+			&& control == false) 
+		{
+			increaseRb2dVelocity ();
+			control = true;
+		}
+
+		if (GameControl.instance.score == scoreToStopIncreasingSpeed && control == false) {
+			control = true;
+		}
+
 	}
+
+	void increaseRb2dVelocity(){
+		scrollSpeed -= increaseSpeedPerScore;
+		rb2d.velocity = new Vector2 (scrollSpeed, 0);
+	}
+
 }
