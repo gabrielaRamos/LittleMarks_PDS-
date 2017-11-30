@@ -1116,6 +1116,7 @@ GameObject:
   - component: {fileID: 936621520}
   - component: {fileID: 936621522}
   - component: {fileID: 936621523}
+  - component: {fileID: 936621524}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1188,6 +1189,30 @@ MonoBehaviour:
   botLane: -3
   midLane: 0
   topLane: 3
+--- !u!114 &936621524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936621519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227b8d2cfc2f5b64f985f4100d80fe44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceColaPrefab: {fileID: 1974656302992430, guid: f1299c93a4de4ac43b106c5bcb8791b0,
+    type: 2}
+  priceFriesPrefab: {fileID: 1925916297993000, guid: f023b1788bd9fee4fb1a16f7f1e6fb46,
+    type: 2}
+  priceBurguerPrefab: {fileID: 1096196460916600, guid: 4c5e60ec45576a44da15197452afe6ba,
+    type: 2}
+  pricePizzaPrefab: {fileID: 1959675393683784, guid: 1c7d438c938ebb1428fc9254f9b7ce7d,
+    type: 2}
+  botLane: -3
+  midLane: 0
+  topLane: 3
+  priceSpawnX: 12
+  priceSpawnRate: 5
 --- !u!1 &984023288
 GameObject:
   m_ObjectHideFlags: 0

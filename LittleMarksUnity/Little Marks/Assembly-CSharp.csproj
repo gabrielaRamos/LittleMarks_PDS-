@@ -57,8 +57,11 @@
      <Compile Include="Assets\Scripts\menu_controller.cs" />
      <Compile Include="Assets\Scripts\ObstacleSpawn.cs" />
      <Compile Include="Assets\Scripts\PlanetSpawn.cs" />
+     <Compile Include="Assets\Scripts\PriceSpawn.cs" />
+     <Compile Include="Assets\Scripts\PrizeUpdater.cs" />
      <Compile Include="Assets\Scripts\QRCode.cs" />
      <Compile Include="Assets\Scripts\RepeatingBackground.cs" />
+     <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\ScrollingObject.cs" />
      <Compile Include="Assets\Scripts\Ship.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />

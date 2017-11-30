@@ -63,9 +63,32 @@ public class Ship : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D() {
-		isDead = true;
-		GameControl.instance.ShipExplodes ();
+	void OnCollisionEnter2D(Collision2D other) {
+
+		if (other.gameObject.CompareTag ("meteor")) {
+			isDead = true;
+			GameControl.instance.ShipExplodes ();
+		}
 	}
 
+	void OnTriggerEnter2D(Collider2D other) {
+
+		if (other.gameObject.CompareTag ("cola")) {
+			GameControl.instance.colaCount += 1;
+			other.gameObject.SetActive (false);
+
+		} else if (other.gameObject.CompareTag ("fries")) {
+			other.gameObject.SetActive (false);
+			GameControl.instance.friesCount += 1;
+
+		} else if (other.gameObject.CompareTag ("burguer")) {
+			other.gameObject.SetActive (false);
+			GameControl.instance.burguerCount += 1;
+
+		} else if (other.gameObject.CompareTag ("pizza")) {
+			other.gameObject.SetActive (false);
+			GameControl.instance.pizzaCount += 1;
+		}
+
+	}
 }

@@ -14,6 +14,11 @@ public class GameControl : MonoBehaviour {
 	public Text scoreText;
 	public int score = 0;
 
+	public int colaCount = 0;
+	public int friesCount = 0;
+	public int burguerCount = 0;
+	public int pizzaCount = 0;
+
 	private float currentTime;
 	private bool priceWon = false;
 
@@ -25,7 +30,6 @@ public class GameControl : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
-
 	}
 
 	// Update is called once per frame
@@ -66,5 +70,10 @@ public class GameControl : MonoBehaviour {
 
 	public void priceWin(){
 		priceWinText.SetActive (true);
+	}
+
+
+	void OnApplicationQuit(){
+
 	}
 }
