@@ -62,7 +62,7 @@ public class PriceSpawn : MonoBehaviour {
 				prices[2] = (GameObject)Instantiate (priceBurguerPrefab, laneXY, Quaternion.identity);
 			}
 			else
-				prices[3] = (GameObject)Instantiate (pricePizzaPre	fab, laneXY, Quaternion.identity);
+				prices[3] = (GameObject)Instantiate (pricePizzaPrefab, laneXY, Quaternion.identity);
 		}
 
 	}
