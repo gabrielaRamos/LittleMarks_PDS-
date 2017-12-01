@@ -1141,6 +1141,10 @@ MonoBehaviour:
   gameOver: 0
   scoreText: {fileID: 476658175}
   score: 0
+  colaCount: 0
+  friesCount: 0
+  burguerCount: 0
+  pizzaCount: 0
 --- !u!4 &936621521
 Transform:
   m_ObjectHideFlags: 0
@@ -1212,7 +1216,7 @@ MonoBehaviour:
   midLane: 0
   topLane: 3
   priceSpawnX: 12
-  priceSpawnRate: 5
+  priceSpawnRate: 23
 --- !u!1 &984023288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,7 +1293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2137731728}
-        m_MethodName: loadScene
+        m_MethodName: loadAndSave
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

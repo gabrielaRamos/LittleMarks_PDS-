@@ -16,7 +16,7 @@ public class PriceSpawn : MonoBehaviour {
 
 	private GameObject[] prices;
 	private int pricePoolSize = 4;
-	private Vector2 initialPrice = new Vector2 (-15f, -25f);
+	private Vector2 initialPrice = new Vector2 (-35f, -25f);
 	private float timeSinceLastPrice;
 
 	// Use this for initialization
@@ -38,29 +38,31 @@ public class PriceSpawn : MonoBehaviour {
 		float lane;
 		timeSinceLastPrice += Time.deltaTime;
 
-		spawnControl = Random.Range (0, 100);
-		laneControl = Random.Range (0, 3);
-
-		if (laneControl == 0)
-			lane = topLane;
-		else if (laneControl == 1)
-			lane = midLane;
-		else
-			lane = botLane;
-
 		if (GameControl.instance.gameOver == false && timeSinceLastPrice >= priceSpawnRate) {
+
+			spawnControl = Random.Range (0, 100);
+			laneControl = Random.Range (0, 3);
+
+			if (laneControl == 0)
+				lane = topLane;
+			else if (laneControl == 1)
+				lane = midLane;
+			else
+				lane = botLane;
+
 			timeSinceLastPrice = 0;
+			Vector2 laneXY = new Vector2 (priceSpawnX, lane);
 
 			if (spawnControl <= 50) {
-				prices [0].transform.position = new Vector2 (priceSpawnX, lane);
+				prices[0] = (GameObject)Instantiate (priceColaPrefab, laneXY, Quaternion.identity);
 			} else if (spawnControl > 50 && spawnControl <= 75) {
-				prices [1].transform.position = new Vector2 (priceSpawnX, lane);
+				prices[1] = (GameObject)Instantiate (priceFriesPrefab, laneXY, Quaternion.identity);
 			}
 			else if (spawnControl > 75 && spawnControl <= 92) {
-				prices [2].transform.position = new Vector2 (priceSpawnX, lane);
+				prices[2] = (GameObject)Instantiate (priceBurguerPrefab, laneXY, Quaternion.identity);
 			}
 			else
-				prices [3].transform.position = new Vector2 (priceSpawnX, lane);
+				prices[3] = (GameObject)Instantiate (pricePizzaPre	fab, laneXY, Quaternion.identity);
 		}
 
 	}

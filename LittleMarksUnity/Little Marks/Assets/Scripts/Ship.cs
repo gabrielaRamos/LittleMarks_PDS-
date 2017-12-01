@@ -75,18 +75,18 @@ public class Ship : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("cola")) {
 			GameControl.instance.colaCount += 1;
-			other.gameObject.SetActive (false);
+			Destroy (other.gameObject);
 
 		} else if (other.gameObject.CompareTag ("fries")) {
-			other.gameObject.SetActive (false);
+			Destroy (other.gameObject);
 			GameControl.instance.friesCount += 1;
 
 		} else if (other.gameObject.CompareTag ("burguer")) {
-			other.gameObject.SetActive (false);
+			Destroy (other.gameObject);
 			GameControl.instance.burguerCount += 1;
 
 		} else if (other.gameObject.CompareTag ("pizza")) {
-			other.gameObject.SetActive (false);
+			Destroy (other.gameObject);
 			GameControl.instance.pizzaCount += 1;
 		}
 

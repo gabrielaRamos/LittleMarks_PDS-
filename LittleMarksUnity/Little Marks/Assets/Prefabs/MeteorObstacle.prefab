@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50902945146670666}
   - component: {fileID: 60812579977728238}
   - component: {fileID: 114115853789407612}
+  - component: {fileID: 114915000457235904}
   m_Layer: 0
   m_Name: MeteorObstacle
   m_TagString: meteor
@@ -198,6 +199,17 @@ MonoBehaviour:
   increaseSpeedPerScore: 0.3
   scoreToIncreaseSpeed: 50
   scoreToStopIncreasingSpeed: 730
+--- !u!114 &114915000457235904
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1888316193341866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940213734a42cbb42a76701055a3af27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212441075762849234
 SpriteRenderer:
   m_ObjectHideFlags: 1

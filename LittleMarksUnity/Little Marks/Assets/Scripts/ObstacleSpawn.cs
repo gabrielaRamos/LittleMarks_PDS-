@@ -41,7 +41,7 @@ public class ObstacleSpawn : MonoBehaviour {
 		if (GameControl.instance.gameOver == false && timeSinceLastMeteor >= meteorSpawnRate) {
 			
 			timeSinceLastMeteor = 0f;
-
+			//meteors [currentObstacle].SetActive(true);
 			if (spawnControl == 0)
 				meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, botLane);
 			else if (spawnControl == 1)
@@ -67,6 +67,8 @@ public class ObstacleSpawn : MonoBehaviour {
 				}
 			}
 		
+			currentObstacle += 1;
+
 			if (currentObstacle >= meteorPoolSize) 
 			{
 				currentObstacle = 0;

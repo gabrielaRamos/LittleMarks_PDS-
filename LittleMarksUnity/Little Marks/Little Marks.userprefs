@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\menu_controller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PriceSpawn.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameControl.cs" Line="29" Column="20" />
-      <File FileName="Assets\Scripts\Ship.cs" Line="70" Column="15" />
-      <File FileName="Assets\Scripts\PrizeUpdater.cs" Line="24" Column="9" />
-      <File FileName="Assets\Scripts\menu_controller.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\Ship.cs" Line="78" Column="29" />
+      <File FileName="Assets\Scripts\PriceSpawn.cs" Line="51" Column="20" />
+      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="70" Column="25" />
+      <File FileName="Assets\Scripts\checkPriceCollision.cs" Line="22" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
