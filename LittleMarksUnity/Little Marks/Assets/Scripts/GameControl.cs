@@ -10,8 +10,6 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl instance;
 	public GameObject gameOverText;
-	public GameObject priceWinText;
-	public GameObject priceReclaimText;
 	public bool gameOver = false;
 	public Text scoreText;
 	public int score = 0;
@@ -21,8 +19,6 @@ public class GameControl : MonoBehaviour {
 	public int burguerCount;
 	public int pizzaCount;
 
-	private float currentTime;
-	private bool priceWon = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -39,6 +35,8 @@ public class GameControl : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
+
+		Time.timeScale = 1f; //Resume o jogo caso ele tenha sido pausado e ido para o menu, sempre que a cena carrega, ela está com o time definido.
 	}
 
 	// Update is called once per frame
@@ -46,18 +44,15 @@ public class GameControl : MonoBehaviour {
 		
 		if (gameOver && Input.touchCount > 0) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+
+			Score object_score = new Score (colaCount, pizzaCount, burguerCount, friesCount);
+
+			JsonData scr;
+			scr = JsonMapper.ToJson(object_score);
+			File.WriteAllText (Application.persistentDataPath + "/Score.json", scr.ToString());
 		}
 
 		ShipScored();
-
-		if (score == 100 && gameOver == false) {
-			currentTime = Time.time;
-			priceWinText.SetActive (true);
-			priceWon = true;
-		}
-		if ((Time.time - currentTime >= 3.0f) || gameOver == true) {
-			priceWinText.SetActive (false);
-		}
 	}
 
 	public void ShipScored(){
@@ -70,15 +65,9 @@ public class GameControl : MonoBehaviour {
 	public void ShipExplodes(){
 		
 		gameOverText.SetActive (true);
-		if (priceWon)
-			priceReclaimText.SetActive (true);
 		
 		gameOver = true;	
 
-	}
-
-	public void priceWin(){
-		priceWinText.SetActive (true);
 	}
 
 
@@ -88,7 +77,6 @@ public class GameControl : MonoBehaviour {
 		JsonData scr;
 		scr = JsonMapper.ToJson(object_score);
 		File.WriteAllText (Application.persistentDataPath + "/Score.json", scr.ToString());
-
 
 	}
 }

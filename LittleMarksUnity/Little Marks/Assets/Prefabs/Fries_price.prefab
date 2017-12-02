@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8796d279579fd6a4680fdc2b06904ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -8
+  scrollSpeed: -12
   increaseSpeedPerScore: 0.3
   scoreToIncreaseSpeed: 50
   scoreToStopIncreasingSpeed: 730

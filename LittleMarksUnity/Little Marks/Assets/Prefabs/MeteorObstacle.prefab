@@ -195,10 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8796d279579fd6a4680fdc2b06904ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -8
-  increaseSpeedPerScore: 0.3
-  scoreToIncreaseSpeed: 50
-  scoreToStopIncreasingSpeed: 730
+  scrollSpeed: -12
+  increaseSpeedPerScore: 0.31
+  scoreToIncreaseSpeed: 20
+  scoreToStopIncreasingSpeed: 7000
 --- !u!114 &114915000457235904
 MonoBehaviour:
   m_ObjectHideFlags: 1

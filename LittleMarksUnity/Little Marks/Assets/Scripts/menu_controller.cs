@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 using LitJson;
 
 public class menu_controller : MonoBehaviour {
+
+	public Button play_button;
+	public Button pause_button;
 
 	public void loadScene(string scene_name) {
 	
@@ -40,4 +44,26 @@ public class menu_controller : MonoBehaviour {
 
 
 	}
+
+	public void pauseGame(){
+		Time.timeScale = 0f;
+
+		pause_button.enabled = !pause_button.enabled;
+		play_button.enabled = !play_button.enabled;
+		pause_button.image.enabled = !pause_button.image.enabled;
+		play_button.image.enabled = !play_button.image.enabled;
+
+	}
+
+	public void playGame(){
+		
+		Time.timeScale = 1f;
+
+		pause_button.enabled = !pause_button.enabled;
+		play_button.enabled = !play_button.enabled;
+		pause_button.image.enabled = !pause_button.image.enabled;
+		play_button.image.enabled = !play_button.image.enabled;
+
+	}
+		
 }

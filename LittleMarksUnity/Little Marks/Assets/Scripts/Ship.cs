@@ -12,14 +12,19 @@ public class Ship : MonoBehaviour {
 	private bool controlConstantTouch = false;
 	private Rigidbody2D rb2d;
 	private bool blockMoveTouch = true;
+	private int lastMovement = 0; //1 é pra cima, 2 é pra baixo, 0 não teve movimento;
+	private Animator anim;
 
 	public float shipVelocity = 0.5f;
 	public float botLane = -3.0f;
 	public float midLane = 0f;
 	public float topLane = 3.0f;
 
+
 	void Start(){
 		transform.DOMoveY (midLane, shipVelocity);
+
+		anim = GetComponent<Animator> ();
 	}
 
 	// Update is called once per frame
@@ -37,7 +42,9 @@ public class Ship : MonoBehaviour {
 					pos = touch.position;
 					controlConstantTouch = false;
 					blockMoveTouch = false;
-				} else if (touch.phase == TouchPhase.Moved && !controlConstantTouch && !blockMoveTouch) {
+				} 
+
+				if (touch.phase == TouchPhase.Moved && !controlConstantTouch && !blockMoveTouch) {
 					lastPos = Vector2.zero;
 					lastPos = touch.position;
 
@@ -46,17 +53,46 @@ public class Ship : MonoBehaviour {
 					if (moveSide > 0) {
 						if (transform.position.y == botLane) {
 							transform.DOMoveY (midLane, shipVelocity);
+							lastMovement = 1;
 						} else if (transform.position.y == midLane) {
 							transform.DOMoveY (topLane, shipVelocity);
+							lastMovement = 1;
+						}  else if (transform.position.y < midLane && lastMovement == 1){
+							transform.DOMoveY (topLane, shipVelocity);
+							lastMovement = 1;
 						}
+						else if (transform.position.y < midLane && lastMovement == 2){
+							transform.DOMoveY (midLane, shipVelocity);
+							lastMovement = 1;
+						} 
+						else if (transform.position.y < topLane && transform.position.y > midLane && lastMovement == 2){
+							transform.DOMoveY (topLane, shipVelocity);
+							lastMovement = 1;
+						} 
+
 					} else if (moveSide < 0) {
 						if (transform.position.y == topLane) {
 							transform.DOMoveY (midLane, shipVelocity);
+							lastMovement = 2;
+
 						} else if (transform.position.y == midLane) {
 							transform.DOMoveY (botLane, shipVelocity);
+							lastMovement = 2;
 						}
-					}
+						else if (transform.position.y < topLane && transform.position.y > midLane && lastMovement == 2){
+							transform.DOMoveY (botLane, shipVelocity);
+							lastMovement = 2;
+						}
+						else if (transform.position.y < topLane && transform.position.y > midLane && lastMovement == 1){
+							transform.DOMoveY (midLane, shipVelocity);
+							lastMovement = 2;
+						}
+						else if (transform.position.y < midLane && lastMovement == 1){
+							transform.DOMoveY (botLane, shipVelocity);
+							lastMovement = 2;
+						}
 
+					}
 					controlConstantTouch = true;
 				} 
 			}
@@ -66,8 +102,13 @@ public class Ship : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) {
 
 		if (other.gameObject.CompareTag ("meteor")) {
+			anim.SetTrigger ("Explosion");
 			isDead = true;
+			Destroy (other.gameObject);
+
+			
 			GameControl.instance.ShipExplodes ();
+
 		}
 	}
 

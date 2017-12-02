@@ -40,3 +40,4 @@ C:\Users\Usuario\Documents\Ciência Da Computação - 6º Semestre\PDS\LittleMar
 C:\Users\Usuario\Documents\Ciência Da Computação - 6º Semestre\PDS\LittleMarks_PDS-\LittleMarksUnity\Little Marks\obj\Debug\Assembly-CSharp.dll
 C:\Users\Usuario\Documents\Ciência Da Computação - 6º Semestre\PDS\LittleMarks_PDS-\LittleMarksUnity\Little Marks\obj\Debug\Assembly-CSharp.pdb
 C:\Users\Usuario\Documents\Ciência Da Computação - 6º Semestre\PDS\LittleMarks_PDS-\LittleMarksUnity\Little Marks\Temp\bin\Debug\zxing.unity.dll
+C:\Users\Usuario\Documents\Ciência Da Computação - 6º Semestre\PDS\LittleMarks_PDS-\LittleMarksUnity\Little Marks\Temp\bin\Debug\LitJson.dll
