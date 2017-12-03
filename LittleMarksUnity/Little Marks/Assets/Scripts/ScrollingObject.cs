@@ -5,6 +5,8 @@ using UnityEngine;
 public class ScrollingObject : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
+	private GameObject obstacle;
+	private Rigidbody2D ob2d;
 	private bool control = false;
 
 	public float scrollSpeed;
@@ -15,7 +17,17 @@ public class ScrollingObject : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
-		rb2d.velocity = new Vector2 (scrollSpeed, 0);
+
+		if (this.gameObject.CompareTag ("meteor") || this.gameObject.CompareTag ("background"))
+			rb2d.velocity = new Vector2 (scrollSpeed, 0);
+
+		else {
+			obstacle = GameObject.FindWithTag ("meteor");
+			ob2d = obstacle.GetComponent<Rigidbody2D> ();
+			rb2d.velocity = ob2d.velocity;
+
+			scrollSpeed = ob2d.velocity.x;
+		}
 
 	}
 	
@@ -44,6 +56,7 @@ public class ScrollingObject : MonoBehaviour {
 	void increaseRb2dVelocity(){
 		scrollSpeed -= increaseSpeedPerScore;
 		rb2d.velocity = new Vector2 (scrollSpeed, 0);
+
 	}
 
 }

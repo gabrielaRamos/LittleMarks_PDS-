@@ -20,7 +20,7 @@ public class menu_controller : MonoBehaviour {
 	public void loadAndSave(string scene_name) {
 		
 		Score object_score = new Score (GameControl.instance.colaCount, GameControl.instance.pizzaCount, 
-			GameControl.instance.burguerCount, GameControl.instance.friesCount);
+			GameControl.instance.burguerCount, GameControl.instance.friesCount, GameControl.instance.bestScore);
 		
 		JsonData scr;
 		scr = JsonMapper.ToJson(object_score);
@@ -34,7 +34,7 @@ public class menu_controller : MonoBehaviour {
 	public void loadAndSaveEx(string scene_name) {
 
 		Score object_score = new Score (PrizeUpdater.instance.colaCount, PrizeUpdater.instance.pizzaCount, 
-			PrizeUpdater.instance.burguerCount, PrizeUpdater.instance.friesCount);
+			PrizeUpdater.instance.burguerCount, PrizeUpdater.instance.friesCount, PrizeUpdater.instance.bestScore);
 
 		JsonData scr;
 		scr = JsonMapper.ToJson(object_score);

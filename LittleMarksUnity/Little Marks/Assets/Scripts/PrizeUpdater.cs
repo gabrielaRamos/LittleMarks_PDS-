@@ -18,6 +18,7 @@ public class PrizeUpdater : MonoBehaviour {
 	public int friesCount;
 	public int burguerCount;
 	public int pizzaCount;
+	public int bestScore;
 
 	private string jsonScore;
 	private JsonData scoreData;
@@ -33,6 +34,7 @@ public class PrizeUpdater : MonoBehaviour {
 		pizzaCount = int.Parse(scoreData [1].ToString());
 		burguerCount = int.Parse(scoreData [2].ToString());
 		friesCount = int.Parse(scoreData [3].ToString());
+		bestScore = int.Parse (scoreData [4].ToString ());
 
 		scoreColaText.text = "= " + scoreData[0];
 		scorePizzaText.text = "= " + scoreData[1];

@@ -104,7 +104,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-81931f5dadbc7bdfe71115449f816406 Assembly-CSharp.dll:.GameControl
+8aa03a08adeb134f4539a433d41b27d1 Assembly-CSharp.dll:.GameControl
 0ea7e3a1b65cd933d7a007e6774c4eaa Assembly-CSharp.dll:.Sequences
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -144,5 +144,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 45984d5e08c0f33bc81b13fae9a9ed9d Assembly-CSharp.dll:.PriceSpawn
 ce9de2312162c6ef358ee6c5a5c60701 Assembly-CSharp.dll:.RepeatingBackground
-e9234425c568f2a5496d0d38e77b6c3f Assembly-CSharp.dll:.PrizeUpdater
+4fad965d53ce30acdbf242f4f00c496f Assembly-CSharp.dll:.PrizeUpdater
 bedbc6b83c5494d00c873f0024bb9f33 Assembly-CSharp.dll:.ObstacleSpawn
+fefca80b384aeb91f8744d3b6a8ee14c Assembly-CSharp.dll:.scoreControl

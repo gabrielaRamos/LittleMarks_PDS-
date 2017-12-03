@@ -54,15 +54,23 @@ public class PriceSpawn : MonoBehaviour {
 			Vector2 laneXY = new Vector2 (priceSpawnX, lane);
 
 			if (spawnControl <= 50) {
-				prices[0] = (GameObject)Instantiate (priceColaPrefab, laneXY, Quaternion.identity);
+
+				prices [0] = (GameObject)Instantiate (priceColaPrefab, laneXY, Quaternion.identity);
+
+
 			} else if (spawnControl > 50 && spawnControl <= 75) {
-				prices[1] = (GameObject)Instantiate (priceFriesPrefab, laneXY, Quaternion.identity);
+				prices [1] = (GameObject)Instantiate (priceFriesPrefab, laneXY, Quaternion.identity);
+
+
+			} else if (spawnControl > 75 && spawnControl <= 92) {
+				prices [2] = (GameObject)Instantiate (priceBurguerPrefab, laneXY, Quaternion.identity);
+
+
+			} else {
+				prices [3] = (GameObject)Instantiate (pricePizzaPrefab, laneXY, Quaternion.identity);
+
+
 			}
-			else if (spawnControl > 75 && spawnControl <= 92) {
-				prices[2] = (GameObject)Instantiate (priceBurguerPrefab, laneXY, Quaternion.identity);
-			}
-			else
-				prices[3] = (GameObject)Instantiate (pricePizzaPrefab, laneXY, Quaternion.identity);
 		}
 
 	}

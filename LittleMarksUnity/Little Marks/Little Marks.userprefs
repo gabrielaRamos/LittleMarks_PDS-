@@ -1,14 +1,29 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ObstacleSpawn.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\scoreControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Ship.cs" Line="50" Column="21" />
-      <File FileName="Assets\Scripts\PriceSpawn.cs" Line="65" Column="55" />
-      <File FileName="Assets\Scripts\GameControl.cs" Line="69" Column="3" />
-      <File FileName="Assets\Scripts\menu_controller.cs" Line="48" Column="24" />
-      <File FileName="Assets\Scripts\ScrollingObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ObstacleSpawn.cs" Line="31" Column="83" />
+      <File FileName="Assets\Scripts\scoreControl.cs" Line="24" Column="22" />
+      <File FileName="Assets\Scripts\PrizeUpdater.cs" Line="41" Column="47" />
+      <File FileName="Assets\Scripts\GameControl.cs" Line="50" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Little Marks" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="scoreControl.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Little Marks" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

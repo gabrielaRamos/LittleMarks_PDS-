@@ -9,6 +9,7 @@ TagManager:
   - fries
   - pizza
   - meteor
+  - background
   layers:
   - Default
   - TransparentFX

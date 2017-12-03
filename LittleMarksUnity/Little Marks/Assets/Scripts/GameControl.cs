@@ -18,6 +18,7 @@ public class GameControl : MonoBehaviour {
 	public int friesCount;
 	public int burguerCount;
 	public int pizzaCount;
+	public int bestScore;
 
 
 	// Use this for initialization
@@ -29,6 +30,7 @@ public class GameControl : MonoBehaviour {
 		pizzaCount = int.Parse(scoreData [1].ToString());
 		burguerCount = int.Parse(scoreData [2].ToString());
 		friesCount = int.Parse(scoreData [3].ToString());
+		bestScore = int.Parse (scoreData [4].ToString ());
 
 		if (instance == null) {
 			instance = this;
@@ -36,7 +38,7 @@ public class GameControl : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		Time.timeScale = 1f; //Resume o jogo caso ele tenha sido pausado e ido para o menu, sempre que a cena carrega, ela está com o time definido.
+		Time.timeScale = 1f; //Resume o jogo caso ele tenha sido pausado e ido para o menu, sempre que a cena carrega, ela está com o timescale definido.
 	}
 
 	// Update is called once per frame
@@ -45,7 +47,7 @@ public class GameControl : MonoBehaviour {
 		if (gameOver && Input.touchCount > 0) {
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 
-			Score object_score = new Score (colaCount, pizzaCount, burguerCount, friesCount);
+			Score object_score = new Score (colaCount, pizzaCount, burguerCount, friesCount, bestScore);
 
 			JsonData scr;
 			scr = JsonMapper.ToJson(object_score);
@@ -65,14 +67,16 @@ public class GameControl : MonoBehaviour {
 	public void ShipExplodes(){
 		
 		gameOverText.SetActive (true);
-		
-		gameOver = true;	
+		gameOver = true;
+
+		if (bestScore < score)
+			bestScore = score;
 
 	}
 
 
 	void OnApplicationQuit(){
-		Score object_score = new Score (colaCount, pizzaCount, burguerCount, friesCount);
+		Score object_score = new Score (colaCount, pizzaCount, burguerCount, friesCount, bestScore);
 
 		JsonData scr;
 		scr = JsonMapper.ToJson(object_score);
@@ -86,11 +90,14 @@ public class Score {
 	public int pizza;
 	public int burguer;
 	public int fries;
+	public int score;
 
-	public Score(int cola, int pizza, int burguer, int fries) {
+	public Score(int cola, int pizza, int burguer, int fries, int score) {
 		this.cola = cola;
 		this.pizza = pizza;
 		this.fries = fries;
 		this.burguer = burguer;
+		this.score = score;
 	}
+
 }
