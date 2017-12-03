@@ -53,7 +53,7 @@ public class ObstacleSpawn : MonoBehaviour {
 		if (GameControl.instance.gameOver == false && timeSinceLastMeteor >= meteorSpawnRate && obstacleControl == 0) {
 			
 			timeSinceLastMeteor = 0f;
-			//meteors [currentObstacle].SetActive(true);
+			meteors [currentObstacle].SetActive(true);
 			if (spawnControl == 0)
 				meteors [currentObstacle].transform.position = new Vector2 (meteorSpawnX, botLane);
 			else if (spawnControl == 1)
@@ -90,7 +90,7 @@ public class ObstacleSpawn : MonoBehaviour {
 		if (GameControl.instance.gameOver == false && timeSinceLastMeteor >= meteorSpawnRate && obstacleControl == 1) {
 
 			timeSinceLastMeteor = 0f;
-			//meteors [currentObstacle].SetActive(true);
+			satelites [currentObstacle].SetActive(true);
 			if (spawnControl == 0)
 				satelites [currentObstacle].transform.position = new Vector2 (meteorSpawnX, botLane);
 			else if (spawnControl == 1)

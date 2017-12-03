@@ -51,6 +51,9 @@ public class Ship : MonoBehaviour {
 					moveSide = lastPos.y - pos.y;
 
 					if (moveSide > 0) {
+
+						anim.SetTrigger ("Rising");
+
 						if (transform.position.y == botLane) {
 							transform.DOMoveY (midLane, shipVelocity);
 							lastMovement = 1;
@@ -70,7 +73,11 @@ public class Ship : MonoBehaviour {
 							lastMovement = 1;
 						} 
 
+
 					} else if (moveSide < 0) {
+						
+						anim.SetTrigger ("Falling");
+
 						if (transform.position.y == topLane) {
 							transform.DOMoveY (midLane, shipVelocity);
 							lastMovement = 2;

@@ -7,10 +7,10 @@ public class ScrollingObject : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private bool control = false;
 
-	public float scrollSpeed = -3.5f;
-	public float increaseSpeedPerScore = -0.15f;
-	public float scoreToIncreaseSpeed = 50;
-	public float scoreToStopIncreasingSpeed = 120;
+	public float scrollSpeed;
+	public float increaseSpeedPerScore;
+	public float scoreToIncreaseSpeed;
+	public float scoreToStopIncreasingSpeed;
 
 	// Use this for initialization
 	void Start () {

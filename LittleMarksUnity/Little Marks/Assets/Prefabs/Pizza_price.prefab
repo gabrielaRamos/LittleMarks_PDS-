@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: -12
-  increaseSpeedPerScore: 0.3
-  scoreToIncreaseSpeed: 50
-  scoreToStopIncreasingSpeed: 730
+  increaseSpeedPerScore: 0.31
+  scoreToIncreaseSpeed: 20
+  scoreToStopIncreasingSpeed: 7000
 --- !u!212 &212396732793265156
 SpriteRenderer:
   m_ObjectHideFlags: 1
