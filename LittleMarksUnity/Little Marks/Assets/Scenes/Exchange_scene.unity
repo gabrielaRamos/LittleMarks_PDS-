@@ -297,6 +297,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 26228798}
+--- !u!1 &50155967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 50155968}
+  - component: {fileID: 50155970}
+  - component: {fileID: 50155969}
+  m_Layer: 5
+  m_Name: warning_text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &50155968
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50155967}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 668290676}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -19.325, y: 141.43}
+  m_SizeDelta: {x: 639.85, y: 21.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &50155969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50155967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.93103456, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5f26117e663b2df4d8d49fc0fbe97e6d, type: 3}
+    m_FontSize: 17
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "* S\xF3 realize a compra quando estiver no estabelecimento"
+--- !u!222 &50155970
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50155967}
 --- !u!1 &93487411
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +638,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 12
 --- !u!222 &298649605
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -649,10 +723,10 @@ MonoBehaviour:
   text_2: {fileID: 2122201928}
   text_3: {fileID: 1404374558}
   text_4: {fileID: 498050193}
-  pizzaPrice: 3
-  burguerPrice: 3
-  friesPrice: 3
-  colaPrice: 3
+  pizzaPrice: 12
+  burguerPrice: 12
+  friesPrice: 12
+  colaPrice: 12
 --- !u!4 &464457264
 Transform:
   m_ObjectHideFlags: 0
@@ -685,6 +759,7 @@ MonoBehaviour:
   friesCount: 0
   burguerCount: 0
   pizzaCount: 0
+  bestScore: 0
 --- !u!1 &471566336
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 12
 --- !u!222 &498050194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -956,6 +1031,7 @@ RectTransform:
   - {fileID: 1663268111}
   - {fileID: 1006925534}
   - {fileID: 332575313}
+  - {fileID: 50155968}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1739,7 +1815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 12
 --- !u!222 &1404374559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2135,6 +2211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b57522ea04c12a14fa792dd65db8b5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  play_button: {fileID: 0}
+  pause_button: {fileID: 0}
 --- !u!4 &1835396494
 Transform:
   m_ObjectHideFlags: 0
@@ -2608,7 +2686,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 12
 --- !u!222 &2122201929
 CanvasRenderer:
   m_ObjectHideFlags: 0

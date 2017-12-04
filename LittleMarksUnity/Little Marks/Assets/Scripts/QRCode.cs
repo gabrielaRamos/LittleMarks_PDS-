@@ -13,10 +13,10 @@ public class QRCode : MonoBehaviour {
 	public Image image_1, image_2, image_3, image_4;
 	public Text text_1, text_2, text_3, text_4;
 
-	public int pizzaPrice = 3;
-	public int burguerPrice = 3;
-	public int friesPrice = 3;
-	public int colaPrice = 3;
+	public int pizzaPrice = 12;
+	public int burguerPrice = 12;
+	public int friesPrice = 12;
+	public int colaPrice = 12;
 
 	public void generateQR(string text) {
 

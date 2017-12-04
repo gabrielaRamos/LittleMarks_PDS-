@@ -264,11 +264,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Desvie dos obstaculos e colete moedas. \n\nTroque estas moedas por pr\xEAmios
-    reais!\n\nModo de regastar os pr\xEAmios: \r\n\nBasta escolher seu pr\xEAmio e
-    guardar seu QR-Code, por meio de um printscreen.\r\nExibindo-o no restaurante
-    voc\xEA poder\xE1 resgatar seu premio escolhido.\r\n\nPremios dispon\xEDveis para
-    troca:\r\n\n1 - Na compra de um lanche, ganhe um refrigerante\r\n2 - Na compra
+  m_Text: "Desvie dos obst\xE1culos e colete moedas. \n\nTroque estas moedas por pr\xEAmios
+    reais!\n\nModo de regastar os pr\xEAmios: \r\n\nBasta escolher seu pr\xEAmio,
+    comprar e mostrar seu QR Code gerado para o estabelecimento.\r\nExibindo-o no
+    restaurante voc\xEA poder\xE1 resgatar seu premio escolhido.\r\n\nPr\xEAmios dispon\xEDveis
+    para troca:\r\n\n1 - Na compra de um lanche, ganhe um refrigerante\r\n2 - Na compra
     de um lanche, ganhe uma batata-frita\r\n3 - Na compra de um lanche, ganhe um refrigerante
     e uma batata-frita\r\n4 - Na compra de uma pizza, ganhe outra pizza."
 --- !u!222 &465339556
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 482826489}
   - component: {fileID: 482826488}
   m_Layer: 5
-  m_Name: Image
+  m_Name: menininha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1144744803}
   - component: {fileID: 1144744802}
   m_Layer: 5
-  m_Name: Button
+  m_Name: home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,8 +655,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 326, y: 180.6}
-  m_SizeDelta: {x: 120, y: 107.55}
+  m_AnchoredPosition: {x: 338.9, y: 188.1}
+  m_SizeDelta: {x: 102.5, y: 92.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144744802
 MonoBehaviour:

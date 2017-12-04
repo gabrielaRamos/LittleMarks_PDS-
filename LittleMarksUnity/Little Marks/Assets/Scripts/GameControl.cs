@@ -10,6 +10,8 @@ public class GameControl : MonoBehaviour {
 
 	public static GameControl instance;
 	public GameObject gameOverText;
+	public GameObject recordText;
+	public GameObject restartButton;
 	public bool gameOver = false;
 	public Text scoreText;
 	public int score = 0;
@@ -43,16 +45,6 @@ public class GameControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-		if (gameOver && Input.touchCount > 0) {
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
-
-			Score object_score = new Score (colaCount, pizzaCount, burguerCount, friesCount, bestScore);
-
-			JsonData scr;
-			scr = JsonMapper.ToJson(object_score);
-			File.WriteAllText (Application.persistentDataPath + "/Score.json", scr.ToString());
-		}
 
 		ShipScored();
 	}
@@ -68,10 +60,12 @@ public class GameControl : MonoBehaviour {
 		
 		gameOverText.SetActive (true);
 		gameOver = true;
+		restartButton.SetActive (true);
 
-		if (bestScore < score)
+		if (bestScore < score) {
+			recordText.SetActive (true);
 			bestScore = score;
-
+		}
 	}
 
 
